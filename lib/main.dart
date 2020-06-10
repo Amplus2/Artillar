@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MainApp());
@@ -33,6 +34,15 @@ class MainHomePageState extends State<MainHomePage> {
     setState(() {
       _counter++;
     });
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeRight,
+        DeviceOrientation.landscapeLeft,
+    ]);
   }
 
   @override
